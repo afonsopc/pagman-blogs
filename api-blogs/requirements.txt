@@ -1,0 +1,5 @@
+flask
+flask-mail
+flask-jwt-extended
+flask-cors
+beautifulsoup4

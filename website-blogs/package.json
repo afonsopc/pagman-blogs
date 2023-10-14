@@ -1,0 +1,35 @@
+{
+  "name": "website-blogs",
+  "version": "1.0.0",
+  "description": "Website desenvolvido por volta da data 23/04/2023",
+  "author": "Afonso Coutinho",
+  "license": "ISC",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host & ../api/.venv/bin/python ../api/api.py",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-react": "^4.3.0",
+    "express": "^4.18.2",
+    "buffer": "^6.0.3",
+    "dompurify": "^3.0.0",
+    "fs-extra": "^11.1.0",
+    "html-react-parser": "^3.0.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.8.1",
+    "tinymce": "^6.3.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "sass": "^1.58.3",
+    "vite": "^4.1.0"
+  }
+}
