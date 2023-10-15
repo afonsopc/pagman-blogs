@@ -1,13 +1,13 @@
-FROM ubuntu:jammy
+FROM alpine:latest
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y python3 python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+RUN apk update
+RUN apk add --no-cache python3 py3-pip python3-dev build-base libressl-dev libffi-dev
 
 COPY . /app
 
-RUN touch requirements.txt
-RUN pip install uwsgi
-RUN pip install -r requirements.txt
+RUN touch /app/requirements.txt
 
-CMD ["/usr/local/bin/uwsgi", "--ini", "/app/uwsgi.ini", "--http", "0.0.0.0:3000"]
+RUN pip3 install uwsgi
+RUN pip3 install -r /app/requirements.txt
+
+CMD ["uwsgi", "--ini", "/app/uwsgi.ini", "--http", "0.0.0.0:3000"]
