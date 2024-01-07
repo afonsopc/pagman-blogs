@@ -1112,3 +1112,8 @@ app.register_blueprint(api_v1_bp)
 with app.app_context():
     create_tables()
     create_usercontent_folder()
+
+if __name__ == "__main__":
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", 3000))
+    app.run(host=host, port=port)

@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    ports:
+      - "3001:3001"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+    volumes:
+      - ./blogs-api/config.json:/app/config.json:ro
+      - ./blogs-api/users.db:/app/users.db:rw
+      - ./blogs-api/usercontent:/app/usercontent:rw
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+
+  website:
+    ports:
+      - "3000:3000"
+    build:
+      context: .
+      dockerfile: website.Dockerfile
